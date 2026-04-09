@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NeuroFocus | Teacher Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#5f4100",
+                        "inverse-primary": "#b3c7ed",
+                        "surface-dim": "#d9dadb",
+                        "background": "#f9f9fa",
+                        "surface-container-low": "#f3f3f4",
+                        "on-surface-variant": "#44474d",
+                        "on-tertiary-fixed-variant": "#005321",
+                        "tertiary": "#00230a",
+                        "tertiary-container": "#003b16",
+                        "secondary-fixed-dim": "#ffba35",
+                        "on-tertiary-fixed": "#002109",
+                        "on-background": "#1a1c1d",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed": "#6bff8f",
+                        "on-surface": "#1a1c1d",
+                        "surface-tint": "#4c5f7f",
+                        "surface-bright": "#f9f9fa",
+                        "inverse-surface": "#2f3132",
+                        "tertiary-fixed-dim": "#4ae176",
+                        "surface-container": "#eeeeef",
+                        "surface-container-highest": "#e2e2e3",
+                        "primary-container": "#1e3250",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#b3c7ed",
+                        "surface-container-high": "#e8e8e9",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#344766",
+                        "on-primary-fixed": "#041c39",
+                        "surface-variant": "#e2e2e3",
+                        "secondary-fixed": "#ffdeac",
+                        "secondary-container": "#feb300",
+                        "surface": "#f9f9fa",
+                        "on-secondary-fixed": "#281900",
+                        "on-secondary-container": "#6a4800",
+                        "secondary": "#7e5700",
+                        "on-tertiary-container": "#00b250",
+                        "outline": "#74777e",
+                        "on-primary-container": "#879abe",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#d5e3ff",
+                        "primary": "#061d3a",
+                        "outline-variant": "#c4c6ce",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .precision-grid {
+            background-image: radial-gradient(circle, #c4c6ce 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Precision Grid Overlay -->
+<div class="fixed inset-0 precision-grid pointer-events-none z-0"></div>
+<!-- SIDE NAV BAR -->
+<aside class="h-screen w-64 fixed left-0 top-0 hidden md:flex flex-col bg-slate-100 dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 z-40 p-4 gap-4">
+<div class="flex items-center gap-3 px-2 mb-6">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container overflow-hidden">
+<img alt="School Logo" class="w-6 h-6" data-alt="Abstract geometric crest of an educational academy, navy and gold tones, minimalist flat design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWlQu3gwTRjn8-4aTQc2hnnNjpNiDSsA_nVH6ZX-Qih3nVWb3YyZb3RvpN3M-SP20jDbatqYoyqAwyBnJHEtq2J8l_HT7hnFWUM3hHNuf37VxzbmJqikfK2vJx1UFfD31EWVgemsqTs48xmK6qQpLSnuvj-M2SluWqm4lhqFpvwB36XWGYQKhdCwYItUlAp6_TJe8rqdqW7VAuP-JKnfPFTuQz8Xd8TIsTV0EwkrhlpGnrs0hbDab8HNHWn34yWitPSGiUXkOWh9MA"/>
+</div>
+<div>
+<h2 class="font-headline text-lg text-blue-900 leading-tight">St. Edwards Academy</h2>
+<p class="text-[10px] font-sans uppercase tracking-wider text-slate-500">Grade 10 - Neuro Science</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1 flex-grow">
+<!-- Active Navigation -->
+<a class="bg-white dark:bg-slate-800 text-blue-900 dark:text-blue-100 shadow-sm rounded-lg font-bold flex items-center gap-3 p-3 transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined text-blue-900" data-icon="pulse">pulse_alert</span>
+<span class="text-xs font-sans uppercase tracking-wider">Classroom Pulse</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-900 flex items-center gap-3 p-3 rounded-lg transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-xs font-sans uppercase tracking-wider">Roster of Focus</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-900 flex items-center gap-3 p-3 rounded-lg transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="queue_play_next">queue_play_next</span>
+<span class="text-xs font-sans uppercase tracking-wider">Activity Queue</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-900 flex items-center gap-3 p-3 rounded-lg transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="text-xs font-sans uppercase tracking-wider">Growth Insights</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-900 flex items-center gap-3 p-3 rounded-lg transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="text-xs font-sans uppercase tracking-wider">Archive</span>
+</a>
+</nav>
+<button class="w-full bg-primary text-on-primary py-3 rounded-xl text-xs font-sans uppercase tracking-widest font-bold flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+            New Alert
+        </button>
+<div class="mt-auto flex flex-col gap-1 border-t border-slate-200 dark:border-slate-800 pt-4">
+<a class="text-slate-500 flex items-center gap-3 p-2 text-xs hover:text-blue-900" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help_outline">help_outline</span>
+                Help Center
+            </a>
+<a class="text-slate-500 flex items-center gap-3 p-2 text-xs hover:text-blue-900" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="verified_user">verified_user</span>
+                Privacy Policy
+            </a>
+</div>
+</aside>
+<!-- TOP APP BAR -->
+<header class="fixed top-0 right-0 left-0 md:left-64 bg-slate-50 dark:bg-slate-900 border-b border-slate-200/50 dark:border-slate-800/50 z-30">
+<div class="flex justify-between items-center w-full px-6 py-3">
+<div class="flex items-center gap-6">
+<h1 class="text-xl font-headline italic font-semibold text-blue-900 dark:text-blue-100">NeuroFocus</h1>
+<nav class="hidden lg:flex items-center gap-4">
+<a class="text-blue-900 dark:text-blue-100 border-b-2 border-blue-900 dark:border-blue-400 pb-1 font-medium text-sm" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-700 transition-colors text-sm" href="#">Classroom</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-700 transition-colors text-sm" href="#">Reports</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-700 transition-colors text-sm" href="#">Resources</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden xl:flex items-center gap-3 px-3 py-1.5 bg-tertiary-container/10 rounded-full border border-tertiary-container/20">
+<span class="material-symbols-outlined text-tertiary-container text-sm" data-icon="security">security</span>
+<span class="text-[10px] font-mono text-tertiary-container font-semibold uppercase tracking-tighter">PHI Protected</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden ring-2 ring-white ring-offset-1">
+<img alt="Teacher Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional female teacher with glasses, soft natural library lighting, blurred bookshelves background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOVqbcWqATpgZr7pZD3Pkx8voZzatYelHlWki04KDrjP8M6Rkklu0FMiC4m0zawZqTzfJxzvR4Gq0YwBmDpWqoMDSfLOk1HZmyqJtrfAkV29_xKbix40pSMqOJSj2bzEXPu4-MwCAY3D6GIZJhZzSbFujhk3qVhE5uLu3FUNuSn3oVMW-ck9MNXeQ8FdiX687ccqvhZ5KoJBKsBkfP8ICfgyxo3vuKQrYExx5WUyxl36IeTSyM64N4MYw_C553gzUh5hhfLO9hRpgA"/>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN CONTENT AREA -->
+<main class="pt-20 pb-16 md:pb-6 md:pl-72 pr-6 min-h-screen relative z-10">
+<!-- ASYMMETRIC HERO SECTION -->
+<section class="mb-12 flex flex-col md:flex-row justify-between items-baseline gap-4">
+<div>
+<h2 class="text-5xl font-headline italic text-primary leading-tight">Welcome back, Professor.</h2>
+<p class="text-on-surface-variant font-body max-w-md mt-2">Classroom cognitive load is currently <span class="text-tertiary-container font-semibold">Optimal</span>. 14 students showing peak engagement.</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-label-sm font-mono text-outline uppercase tracking-widest">Global Focus Score</span>
+<span class="text-6xl font-headline text-primary">82<span class="text-2xl italic font-light">/100</span></span>
+</div>
+</section>
+<div class="grid grid-cols-12 gap-8">
+<!-- CLASSROOM PULSE (Top Row Metrics) -->
+<div class="col-span-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center justify-between border-l-4 border-primary">
+<div>
+<p class="text-label-sm font-mono text-outline uppercase">Students at Focus</p>
+<h3 class="text-3xl font-headline mt-1">24<span class="text-lg text-outline">/28</span></h3>
+</div>
+<span class="material-symbols-outlined text-4xl text-primary/20" data-icon="psychology">psychology</span>
+</div>
+<div class="bg-error-container/20 p-6 rounded-xl flex items-center justify-between border-l-4 border-error">
+<div>
+<p class="text-label-sm font-mono text-error uppercase">Pending Alerts</p>
+<h3 class="text-3xl font-headline mt-1 text-error">03</h3>
+</div>
+<span class="material-symbols-outlined text-4xl text-error/20" data-icon="emergency_home">emergency_home</span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center justify-between border-l-4 border-secondary">
+<div>
+<p class="text-label-sm font-mono text-outline uppercase">Weekly Avg Engagement</p>
+<h3 class="text-3xl font-headline mt-1">78%</h3>
+</div>
+<span class="material-symbols-outlined text-4xl text-secondary/20" data-icon="monitoring">monitoring</span>
+</div>
+</div>
+<!-- ROSTER OF FOCUS (Main Grid) -->
+<div class="col-span-12 lg:col-span-8">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-2xl font-headline text-primary">Roster of Focus</h3>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container-highest rounded-full text-xs font-label">Filter: All Students</span>
+<span class="px-3 py-1 bg-surface-container-highest rounded-full text-xs font-label">Sort: Focus Desc.</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Student Card 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl transition-all hover:translate-y-[-2px] hover:shadow-xl hover:shadow-on-surface/5 border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3">
+<div class="w-12 h-12 rounded-lg overflow-hidden bg-slate-100">
+<img alt="Alex M." class="w-full h-full object-cover" data-alt="Portrait of a teenage boy with a thoughtful expression, warm classroom lighting, high-quality photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWKqfI7975hpr-HhVznE8c4yvgWltcrNFC2iwXkqzf-R31PibxYoEucyCcfReds5g3YsPB3DiEpQYepdP40EnTzTbbvregJ-rzal9DuJumH3MpeoXdzbmzR9DPl4a6262IKgigmu_vDWz3F5i7f5NOyDVFxymxIrKs47QokOAq8YCJ2cpw4pn3_Csq5rHGjr8hc1jvpBetPdj5bJcwkdWTIVkLKErR_hIzXTONHwK-X2qLcMB37eE8t_FxRD_h5vhqDhvFK2vPM-om"/>
+</div>
+<div>
+<h4 class="font-bold text-primary">Alex M.</h4>
+<span class="text-[10px] font-mono text-tertiary-container bg-tertiary-fixed-dim px-2 py-0.5 rounded-full uppercase">Stable</span>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-2xl font-headline leading-none">94</span>
+<span class="text-[9px] font-mono text-outline uppercase">Focus</span>
+</div>
+</div>
+<div class="h-8 w-full bg-slate-50 rounded flex items-end gap-1 px-1 mb-4">
+<div class="w-full bg-tertiary-fixed-dim h-1/2 rounded-t-sm"></div>
+<div class="w-full bg-tertiary-fixed-dim h-2/3 rounded-t-sm"></div>
+<div class="w-full bg-tertiary-fixed-dim h-3/4 rounded-t-sm"></div>
+<div class="w-full bg-tertiary-fixed-dim h-1/2 rounded-t-sm"></div>
+<div class="w-full bg-tertiary-fixed-dim h-5/6 rounded-t-sm"></div>
+<div class="w-full bg-tertiary-fixed-dim h-full rounded-t-sm"></div>
+</div>
+<p class="text-xs text-on-surface-variant italic">"Exhibited high Alpha-wave coherence during the complex lipid-layer module."</p>
+</div>
+<!-- Student Card 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl transition-all hover:translate-y-[-2px] hover:shadow-xl hover:shadow-on-surface/5 border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3">
+<div class="w-12 h-12 rounded-lg overflow-hidden bg-slate-100">
+<img alt="Sarah K." class="w-full h-full object-cover" data-alt="Portrait of a high school girl smiling slightly, natural soft outdoor lighting, academic aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIGu-JRXl9jzL7xpCm-XDjlsHIZepO88Om2aEftXtL5Dpn7LlthfyBwh7eT8oVuA5REy9N-cPy0m3tYPZh6psH_JEwuxK1NBDx6WXT5HZhCil2CrD4LXRKfF8W2sdiOBg40uNsbxp8OIWsNNQy8tBwdvPfSzKgkidPAdUtwVfxkmMWxhDF_U75Mx-thEi0Xr7cLr931EEtJ3YivqRAAsy-Y-QU-YmQd4kjINSaJ3K4ePMRbIYUWNpOFkF92Fk963CtDhobl5zby4ps"/>
+</div>
+<div>
+<h4 class="font-bold text-primary">Sarah K.</h4>
+<span class="text-[10px] font-mono text-secondary-container text-on-secondary-container bg-secondary/10 px-2 py-0.5 rounded-full uppercase">Needs Attention</span>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-2xl font-headline leading-none text-secondary">62</span>
+<span class="text-[9px] font-mono text-outline uppercase">Focus</span>
+</div>
+</div>
+<div class="h-8 w-full bg-slate-50 rounded flex items-end gap-1 px-1 mb-4">
+<div class="w-full bg-secondary h-1/2 rounded-t-sm opacity-30"></div>
+<div class="w-full bg-secondary h-1/3 rounded-t-sm opacity-40"></div>
+<div class="w-full bg-secondary h-1/4 rounded-t-sm opacity-50"></div>
+<div class="w-full bg-secondary h-1/2 rounded-t-sm opacity-60"></div>
+<div class="w-full bg-secondary h-1/3 rounded-t-sm opacity-80"></div>
+<div class="w-full bg-secondary h-1/4 rounded-t-sm"></div>
+</div>
+<p class="text-xs text-on-surface-variant italic">"Decline in sustain-attention metrics. Scheduled check-in suggested."</p>
+</div>
+<!-- Student Card 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl transition-all hover:translate-y-[-2px] hover:shadow-xl hover:shadow-on-surface/5 border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3">
+<div class="w-12 h-12 rounded-lg overflow-hidden bg-slate-100">
+<img alt="Leo J." class="w-full h-full object-cover" data-alt="Young male student with glasses, sharp studio lighting, professional and modern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmu7Fo8gIpBGR56LibUq_us80iJxrwQi3cXU9ZSl_r90mbdB6mU555xvpzmrsJ3fWGocdjEtgzJgGpqu1IyLAh-qZgB62vB9CINUI4NX73rqln146sF_lMB-HG7BGfViHOsET8-wpREZqKqf5Wj8xYCG5cXCTQIsOrH-N0YBtFFbKIXVAm3C_luxVwnRhJWQEvvpqEsbG51yjmkf_QguLAbpS6Zt0LcK8MObyBCmuMWKq85ndLISsvSYeGCI3JZXI9BE42Qy3dnv8r"/>
+</div>
+<div>
+<h4 class="font-bold text-primary">Leo J.</h4>
+<span class="text-[10px] font-mono text-error-container text-on-error-container bg-error px-2 py-0.5 rounded-full uppercase">Critical</span>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-2xl font-headline leading-none text-error">41</span>
+<span class="text-[9px] font-mono text-outline uppercase">Focus</span>
+</div>
+</div>
+<div class="h-8 w-full bg-slate-50 rounded flex items-end gap-1 px-1 mb-4">
+<div class="w-full bg-error h-1/2 rounded-t-sm opacity-50"></div>
+<div class="w-full bg-error h-1/4 rounded-t-sm opacity-50"></div>
+<div class="w-full bg-error h-1/5 rounded-t-sm opacity-50"></div>
+<div class="w-full bg-error h-1/6 rounded-t-sm opacity-80"></div>
+<div class="w-full bg-error h-1/3 rounded-t-sm opacity-90"></div>
+<div class="w-full bg-error h-1/2 rounded-t-sm"></div>
+</div>
+<p class="text-xs text-on-surface-variant italic">"Persistent theta-wave dominance during individual work. High fatigue."</p>
+</div>
+<!-- Student Card 4 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl transition-all hover:translate-y-[-2px] hover:shadow-xl hover:shadow-on-surface/5 border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3">
+<div class="w-12 h-12 rounded-lg overflow-hidden bg-slate-100">
+<img alt="Elena V." class="w-full h-full object-cover" data-alt="Close up of a young woman looking intense and focused, natural sunlight from a window, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsIK5sb3oU-IKiuB70wgd5VyfZDXbJM7UGsKnKnOJ2_WBcUF-JHDY46zEbR0RUhITUh5p2wAtW1VHzkLmpgCKqdJxMAjutUQzgDreaLS9OnLw-iqaxyfxAUKsGs4qwXVXfHuKNspkH12OfNsimLy0Ld7O39dhcd3XK6AGrpkSBlOGGKvhnjxuGOEGrW-gTUZRC7cOozVebITBPNA7gKXpaZdKNIw6_4DCTml9Vrg8HKiHDMrnyCE8FzZ2sgUyoCyDviXwSn6aS71Zt"/>
+</div>
+<div>
+<h4 class="font-bold text-primary">Elena V.</h4>
+<span class="text-[10px] font-mono text-tertiary-container bg-tertiary-fixed-dim px-2 py-0.5 rounded-full uppercase">Stable</span>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-2xl font-headline leading-none">88</span>
+<span class="text-[9px] font-mono text-outline uppercase">Focus</span>
+</div>
+</div>
+<div class="h-8 w-full bg-slate-50 rounded flex items-end gap-1 px-1 mb-4">
+<div class="w-full bg-tertiary h-1/2 rounded-t-sm opacity-80"></div>
+<div class="w-full bg-tertiary h-2/3 rounded-t-sm opacity-80"></div>
+<div class="w-full bg-tertiary h-5/6 rounded-t-sm opacity-80"></div>
+<div class="w-full bg-tertiary h-full rounded-t-sm opacity-80"></div>
+<div class="w-full bg-tertiary h-4/5 rounded-t-sm opacity-80"></div>
+<div class="w-full bg-tertiary h-3/4 rounded-t-sm"></div>
+</div>
+<p class="text-xs text-on-surface-variant italic">"Responding exceptionally well to the auditory focus stimulation."</p>
+</div>
+</div>
+</div>
+<!-- ACTIVITY QUEUE (Right Sidebar) -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-container-low rounded-2xl p-6 flex-grow border border-outline-variant/5">
+<h3 class="text-xl font-headline text-primary mb-6 flex items-center justify-between">
+                        Activity Queue
+                        <span class="bg-primary-container text-on-primary-container text-[10px] font-mono px-2 py-1 rounded-full">6 Pending</span>
+</h3>
+<div class="space-y-6">
+<!-- Message Item -->
+<div class="flex gap-4 group">
+<div class="w-10 h-10 shrink-0 bg-surface-container-highest rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="mail">mail</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h5 class="text-sm font-bold text-primary leading-tight">Parent Message</h5>
+<span class="text-[9px] font-mono text-error font-bold uppercase">Due in 5m</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1">Mrs. Miller regarding Alex's medication shift this morning.</p>
+</div>
+</div>
+<!-- Recommendation Item -->
+<div class="flex gap-4 group">
+<div class="w-10 h-10 shrink-0 bg-surface-container-highest rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="clinical_notes">clinical_notes</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h5 class="text-sm font-bold text-primary leading-tight">Psych Recommendation</h5>
+<span class="text-[9px] font-mono text-outline uppercase">2h ago</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1">Review Dr. Aris's protocol update for Sarah K.'s testing window.</p>
+</div>
+</div>
+<!-- Schedule Item -->
+<div class="flex gap-4 group">
+<div class="w-10 h-10 shrink-0 bg-surface-container-highest rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="calendar_today">calendar_today</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h5 class="text-sm font-bold text-primary leading-tight">Scheduled Check-in</h5>
+<span class="text-[9px] font-mono text-outline uppercase">Tomorrow</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1">Weekly alignment with Leo J. during study hall session.</p>
+</div>
+</div>
+<!-- Task Item -->
+<div class="flex gap-4 group">
+<div class="w-10 h-10 shrink-0 bg-surface-container-highest rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="task_alt">task_alt</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h5 class="text-sm font-bold text-primary leading-tight">Audit Trail Signing</h5>
+<span class="text-[9px] font-mono text-outline uppercase">EOD</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1">Review and authenticate today's neurological intervention logs.</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 bg-surface-container-highest text-primary text-xs font-sans font-bold uppercase tracking-widest rounded-lg hover:bg-surface-container-high transition-colors">
+                        View Full Schedule
+                    </button>
+</div>
+</div>
+<!-- GROWTH INSIGHTS (Bottom Section) -->
+<div class="col-span-12">
+<div class="bg-primary p-8 rounded-3xl relative overflow-hidden shadow-2xl">
+<!-- Glassmorphism Overlay -->
+<div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row justify-between gap-12">
+<div class="max-w-xs">
+<h3 class="text-3xl font-headline italic text-on-primary">Growth Insights</h3>
+<p class="text-on-primary-container text-sm mt-4 opacity-90">Class-wide focus trends have improved by 12% following the implementation of morning neural-priming sessions.</p>
+<div class="mt-8 flex gap-6">
+<div>
+<span class="block text-2xl font-mono text-on-primary">84%</span>
+<span class="text-[9px] font-mono text-on-primary-container uppercase">Compliance</span>
+</div>
+<div>
+<span class="block text-2xl font-mono text-on-primary">14d</span>
+<span class="text-[9px] font-mono text-on-primary-container uppercase">Tracking Span</span>
+</div>
+</div>
+</div>
+<!-- Multi-line Chart Simulation -->
+<div class="flex-grow h-48 flex items-end justify-between gap-2 relative">
+<!-- Background Grid -->
+<div class="absolute inset-0 border-b border-on-primary/10 flex flex-col justify-between py-2">
+<div class="w-full border-t border-on-primary/5"></div>
+<div class="w-full border-t border-on-primary/5"></div>
+<div class="w-full border-t border-on-primary/5"></div>
+</div>
+<!-- Graph Lines (SVG Implementation for accuracy) -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0,80 Q10,75 20,60 T40,65 T60,40 T80,30 T100,20" fill="none" stroke="#4ae176" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<path d="M0,90 Q15,85 30,80 T45,70 T70,60 T90,55 T100,45" fill="none" stroke="#b3c7ed" stroke-dasharray="4 2" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+</svg>
+<!-- Day Markers -->
+<div class="absolute -bottom-8 left-0 right-0 flex justify-between text-[10px] font-mono text-on-primary-container/60 uppercase">
+<span>Day 1</span>
+<span>Day 4</span>
+<span>Day 7</span>
+<span>Day 10</span>
+<span>Today</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BOTTOM NAV BAR (Mobile) -->
+<nav class="fixed bottom-0 w-full z-50 md:hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex justify-around items-center px-4 pb-4 pt-2 w-full">
+<a class="flex flex-col items-center justify-center text-blue-900 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 rounded-xl px-3 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="text-[10px] font-sans font-medium">Pulse</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+<span class="text-[10px] font-sans font-medium">Roster</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="checklist">checklist</span>
+<span class="text-[10px] font-sans font-medium">Queue</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[10px] font-sans font-medium">Insights</span>
+</a>
+</div>
+</nav>
+</body></html>

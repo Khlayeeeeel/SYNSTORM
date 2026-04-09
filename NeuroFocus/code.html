@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NeuroFocus | Unified Portal Access</title>
+<!-- Google Fonts: Newsreader for Serif, Inter for Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-background": "#1a1c1d",
+              "surface-tint": "#4c5f7f",
+              "on-secondary-fixed": "#281900",
+              "surface-container-lowest": "#ffffff",
+              "error": "#ba1a1a",
+              "inverse-primary": "#b3c7ed",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed-variant": "#005321",
+              "inverse-on-surface": "#f0f1f2",
+              "primary-fixed-dim": "#b3c7ed",
+              "primary": "#061d3a",
+              "secondary-fixed": "#ffdeac",
+              "surface-dim": "#d9dadb",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#f3f3f4",
+              "secondary": "#7e5700",
+              "surface-container-highest": "#e2e2e3",
+              "secondary-container": "#feb300",
+              "on-secondary": "#ffffff",
+              "primary-fixed": "#d5e3ff",
+              "on-tertiary-fixed": "#002109",
+              "secondary-fixed-dim": "#ffba35",
+              "on-primary-container": "#879abe",
+              "background": "#f9f9fa",
+              "primary-container": "#1e3250",
+              "outline": "#74777e",
+              "outline-variant": "#c4c6ce",
+              "on-primary": "#ffffff",
+              "tertiary": "#00230a",
+              "surface": "#f9f9fa",
+              "on-tertiary-container": "#00b250",
+              "on-secondary-fixed-variant": "#5f4100",
+              "tertiary-fixed-dim": "#4ae176",
+              "tertiary-container": "#003b16",
+              "surface-container-high": "#e8e8e9",
+              "on-primary-fixed": "#041c39",
+              "surface-bright": "#f9f9fa",
+              "on-primary-fixed-variant": "#344766",
+              "surface-container": "#eeeeef",
+              "on-surface": "#1a1c1d",
+              "surface-variant": "#e2e2e3",
+              "on-secondary-container": "#6a4800",
+              "on-error-container": "#93000a",
+              "inverse-surface": "#2f3132",
+              "tertiary-fixed": "#6bff8f",
+              "on-surface-variant": "#44474d"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .precision-grid {
+            background-image: radial-gradient(circle, #c4c6ce 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.1;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-role-card {
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px -10px rgba(6, 29, 58, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar (From Shared JSON) -->
+<header class="fixed top-0 w-full z-50 bg-[#f9f9fa] dark:bg-[#1a1c1d] border-b border-[#c4c6ce]/20 flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="font-newsreader italic font-semibold text-2xl text-[#1E3250] dark:text-[#d1e4ff]">NeuroFocus</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[#1a1c1d]/60 dark:text-[#e2e2e6]/60 cursor-pointer hover:bg-[#f3f3f4] dark:hover:bg-[#1f1f23] p-2 transition-colors">lock</span>
+<span class="material-symbols-outlined text-[#1a1c1d]/60 dark:text-[#e2e2e6]/60 cursor-pointer hover:bg-[#f3f3f4] dark:hover:bg-[#1f1f23] p-2 transition-colors">help_outline</span>
+</div>
+</header>
+<main class="relative min-h-screen flex items-center justify-center pt-20 pb-24">
+<!-- Precision Grid Background Overlay -->
+<div class="absolute inset-0 precision-grid pointer-events-none"></div>
+<section class="relative z-10 w-full max-w-4xl px-6 flex flex-col items-center">
+<!-- Hero Header: The Doctor's Voice -->
+<div class="text-center mb-12">
+<h1 class="font-headline text-5xl md:text-6xl text-primary font-bold italic tracking-tight mb-4">Welcome to NeuroFocus</h1>
+<p class="font-body text-on-surface-variant max-w-lg mx-auto text-lg leading-relaxed">
+                    Access your personalized clinical environment. Precision data meets human-centric neurological care.
+                </p>
+</div>
+<!-- Central Elevated Login Card -->
+<div class="w-full bg-surface-container-low rounded-xl p-1 md:p-2 transition-all duration-500">
+<div class="bg-surface-container-lowest rounded-lg shadow-[0_40px_80px_-20px_rgba(26,28,29,0.06)] overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-12">
+<!-- Side Identity Column (Asymmetric Hero Element) -->
+<div class="hidden md:flex md:col-span-4 bg-primary p-10 flex-col justify-between relative overflow-hidden">
+<div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+<div class="relative z-10">
+<p class="font-label text-primary-fixed uppercase tracking-[0.2em] text-[10px] mb-6">Portal Authorization</p>
+<h2 class="font-headline text-3xl text-white leading-tight">Securing the narrative of recovery.</h2>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 text-primary-fixed-dim mb-2">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="font-label text-[11px] uppercase tracking-wider">AES-256 Encrypted</span>
+</div>
+<div class="flex items-center gap-3 text-primary-fixed-dim">
+<span class="material-symbols-outlined text-sm">medical_information</span>
+<span class="font-label text-[11px] uppercase tracking-wider">HIPAA Compliant</span>
+</div>
+</div>
+</div>
+<!-- Main Form Area -->
+<div class="md:col-span-8 p-8 md:p-12">
+<!-- Role Selection -->
+<div class="mb-10">
+<label class="font-label text-[10px] uppercase tracking-widest text-outline mb-4 block">Select Your Role<!--8-->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+<!-- Student -->
+<button class="flex flex-col items-center p-4 rounded-lg border border-outline-variant/20 bg-surface-container-low hover:bg-surface-container-high transition-all group active-role-card">
+<span class="material-symbols-outlined text-primary mb-2 transition-transform group-hover:scale-110" style="font-variation-settings: 'FILL' 1;">child_care</span>
+<span class="font-body font-semibold text-xs text-primary">Student</span>
+<span class="font-label text-[9px] text-on-surface-variant opacity-60">Child Explorer</span>
+</button>
+<!-- Parent -->
+<button class="flex flex-col items-center p-4 rounded-lg border border-outline-variant/20 bg-surface-container-low hover:bg-surface-container-high transition-all group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary mb-2 transition-transform group-hover:scale-110">family_restroom</span>
+<span class="font-body font-semibold text-xs text-on-surface">Parent</span>
+<span class="font-label text-[9px] text-on-surface-variant opacity-60">Caregiver</span>
+</button>
+<!-- Teacher -->
+<button class="flex flex-col items-center p-4 rounded-lg border border-outline-variant/20 bg-surface-container-low hover:bg-surface-container-high transition-all group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary mb-2 transition-transform group-hover:scale-110">school</span>
+<span class="font-body font-semibold text-xs text-on-surface">Teacher</span>
+<span class="font-label text-[9px] text-on-surface-variant opacity-60">Educator</span>
+</button>
+<!-- Psychiatrist -->
+<button class="flex flex-col items-center p-4 rounded-lg border border-outline-variant/20 bg-surface-container-low hover:bg-surface-container-high transition-all group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary mb-2 transition-transform group-hover:scale-110">psychology</span>
+<span class="font-body font-semibold text-xs text-on-surface">Doctor</span>
+<span class="font-label text-[9px] text-on-surface-variant opacity-60">Specialist</span>
+</button>
+</div>
+</label></div>
+<!-- Form Fields -->
+<form class="space-y-6">
+<div class="space-y-1">
+<label class="font-label text-[11px] font-bold text-on-surface flex justify-between" for="username">
+                                        Username or Email
+                                        <span class="font-normal text-outline-variant">Required</span>
+</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-0 border-b border-outline-variant/40 focus:ring-0 focus:border-primary px-0 py-3 text-sm transition-all placeholder:text-outline-variant/60" id="username" placeholder="e.g. alex.care@neurofocus.edu" type="text"/>
+<div class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-focus-within:w-full"></div>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label text-[11px] font-bold text-on-surface flex justify-between" for="password">
+                                        Password
+                                        <a class="font-normal text-primary hover:underline" href="#">Forgot?</a>
+</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-0 border-b border-outline-variant/40 focus:ring-0 focus:border-primary px-0 py-3 text-sm transition-all placeholder:text-outline-variant/60" id="password" placeholder="••••••••••••" type="password"/>
+<div class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-focus-within:w-full"></div>
+</div>
+</div>
+<div class="pt-4 flex flex-col md:flex-row md:items-center gap-6">
+<button class="flex-1 bg-primary text-on-primary py-4 px-8 rounded-md font-body font-semibold hover:opacity-90 transition-opacity active:scale-[0.98] transform flex justify-center items-center gap-2" type="submit">
+                                        Start Mission
+                                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</form>
+<div class="mt-8 pt-8 border-t border-outline-variant/10">
+<p class="text-[11px] text-on-surface-variant/60 text-center font-label">
+                                    Accessing this portal constitutes agreement to our Clinical Ethics Guidelines.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Supporting Imagery (Editorial Style) -->
+<div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-3xl opacity-80 grayscale hover:grayscale-0 transition-all duration-700">
+<div class="space-y-4">
+<img alt="Clinical environment" class="w-full aspect-video object-cover rounded-lg shadow-sm" data-alt="Modern medical laboratory with soft blue ambient lighting and high-tech brain imaging monitors in a blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1IhUAEkVeg59cHtChBvK5u8goN10O2rsC24BciQZHH1xUYjC_hKsVHJi7F4ck6t3aCMm8TkJNOYSoA2_CaDsFD3e1cf1PR7gz6iJ7a-UWTPY03VrRtzTUi6BcmkvVrz0ZIGhZskI1z9SH0prYEuoTn2dFofm8vcwEV312EyQ9EJhx6Jh8zNC2FH-B1a5eJrphqAJwm3sZrq8mEHhRp-uP1R_PikpZvaYWA4WuhSpZ56hi_5a-55TqEvcbeDW02sGJ_d379qS3-2FL"/>
+<p class="font-headline italic text-lg text-primary-container">"The data helps us see what the heart already knows."</p>
+</div>
+<div class="flex flex-col justify-end">
+<p class="font-label text-[10px] uppercase tracking-widest text-outline mb-4">Latest Insights</p>
+<h3 class="font-headline text-xl text-on-surface mb-2">Advancing Pediatric Neuro-Rehabilitation</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">Our latest clinical trial results show a 40% increase in patient engagement through gamified baseline assessments.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (From Shared JSON) -->
+<footer class="fixed bottom-0 w-full bg-[#f9f9fa] dark:bg-[#1a1c1d] border-t border-[#c4c6ce]/10 flex flex-col md:flex-row justify-between items-center px-8 py-6 w-full z-50">
+<span class="font-inter text-[11px] uppercase tracking-wider font-medium text-[#1a1c1d] dark:text-[#e2e2e6] opacity-60">
+            © 2024 NeuroFocus Clinical Editorial. HIPAA Compliant.
+        </span>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="font-inter text-[11px] uppercase tracking-wider font-medium text-[#1a1c1d]/40 dark:text-[#e2e2e6]/40 hover:text-[#1E3250] dark:hover:text-[#d1e4ff] transition-colors" href="#">Privacy Policy</a>
+<a class="font-inter text-[11px] uppercase tracking-wider font-medium text-[#1a1c1d]/40 dark:text-[#e2e2e6]/40 hover:text-[#1E3250] dark:hover:text-[#d1e4ff] transition-colors" href="#">Terms of Service</a>
+<a class="font-inter text-[11px] uppercase tracking-wider font-medium text-[#1a1c1d]/40 dark:text-[#e2e2e6]/40 hover:text-[#1E3250] dark:hover:text-[#d1e4ff] transition-colors" href="#">Security Standards</a>
+</div>
+</footer>
+</body></html>

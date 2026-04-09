@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NeuroFocus Parent Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,600;1,400&amp;family=IBM+Plex+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-bright": "#f9f9fa",
+                        "primary-fixed": "#d5e3ff",
+                        "tertiary-fixed-dim": "#4ae176",
+                        "inverse-surface": "#2f3132",
+                        "on-primary-fixed-variant": "#344766",
+                        "surface-variant": "#e2e2e3",
+                        "primary-fixed-dim": "#b3c7ed",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d9dadb",
+                        "surface-container-high": "#e8e8e9",
+                        "primary-container": "#1e3250",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#ffba35",
+                        "on-tertiary-fixed-variant": "#005321",
+                        "on-secondary-fixed-variant": "#5f4100",
+                        "on-surface-variant": "#44474d",
+                        "surface-container-highest": "#e2e2e3",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#b3c7ed",
+                        "outline": "#74777e",
+                        "surface-container": "#eeeeef",
+                        "secondary-container": "#feb300",
+                        "tertiary-fixed": "#6bff8f",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#002109",
+                        "secondary-fixed": "#ffdeac",
+                        "on-primary-fixed": "#041c39",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1a1c1d",
+                        "surface": "#f9f9fa",
+                        "secondary": "#7e5700",
+                        "tertiary": "#00230a",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-tint": "#4c5f7f",
+                        "on-secondary-container": "#6a4800",
+                        "primary": "#061d3a",
+                        "on-background": "#1a1c1d",
+                        "tertiary-container": "#003b16",
+                        "outline-variant": "#c4c6ce",
+                        "background": "#f9f9fa",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#00b250",
+                        "on-secondary-fixed": "#281900",
+                        "on-primary-container": "#879abe"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .serif-italic { font-family: 'Newsreader', serif; font-style: italic; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .dot-grid { background-image: radial-gradient(#c4c6ce 1px, transparent 1px); background-size: 24px 24px; opacity: 0.1; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-[#f9f9fa] dark:bg-[#121212] sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-serif italic text-[#1E3250] dark:text-[#D1E1FF]">NeuroFocus</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-[#1E3250] dark:text-[#D1E1FF] border-b-2 border-[#1E3250] dark:border-[#D1E1FF] pb-1 font-medium transition-colors duration-200" href="#">Overview</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#1E3250] dark:hover:text-[#D1E1FF] font-medium transition-colors duration-200" href="#">Insights</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#1E3250] dark:hover:text-[#D1E1FF] font-medium transition-colors duration-200" href="#">Library</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#1E3250] dark:hover:text-[#D1E1FF] font-medium transition-colors duration-200" href="#">Support</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-slate-500 hover:bg-[#f3f3f4] rounded-full transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-[#f3f3f4] rounded-full transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant/20">
+<img alt="Parent Profile" data-alt="close-up portrait of a kind-looking woman with soft natural lighting and a warm welcoming expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoS5XDZAPPxgbIyTmi7OHKkHgPwN9FZcGatQV5QfYqS3-cS6zZOcvh2kOCscaJRz4goePgPHV6ZRqglKiZo1voDIAc5zx1U9jF_-7-bJQT7dLUdwrQr57dQzuOylVwJSPdRmkgJqOZDY5leBr1J4BEzffNgMFV3o34NC0asXAxkkzp_lDsv8M-HgWLMJIViNh02rAwnMKmSCCSD1KdhVUntncQXGfLECgXcTtC0__xV4F2vLnO_2DVn1pckPnzgGlFu70Cu47AevIf"/>
+</div>
+</div>
+</div>
+<div class="bg-[#f3f3f4] dark:bg-[#1a1c1e] h-[1px] w-full"></div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-12 relative">
+<!-- Precision Grid background -->
+<div class="absolute inset-0 dot-grid pointer-events-none"></div>
+<div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Child Welcome & Hero Data -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Welcome Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="label-sm font-mono text-on-surface-variant tracking-widest uppercase mb-2 block">Parent Dashboard</span>
+<h1 class="text-5xl font-headline text-primary leading-tight">
+                            Welcome back, <span class="serif-italic">Sarah</span>. 
+                            <br/>
+                            Here's how Alex is doing today.
+                        </h1>
+<p class="text-on-surface-variant mt-4 max-w-lg font-body">
+                            Alex is making great strides today. You're doing an amazing job supporting his journey.
+                        </p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-full flex items-center space-x-4">
+<div class="w-12 h-12 bg-tertiary-fixed-dim rounded-full flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined" data-icon="mood" style="font-variation-settings: 'FILL' 1;">mood</span>
+</div>
+<div>
+<div class="label-sm font-mono text-on-surface-variant">CURRENT MOOD</div>
+<div class="text-lg font-bold text-primary">Happy &amp; Calm</div>
+</div>
+</div>
+</section>
+<!-- Hopeful Snapshot: Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-primary-container text-on-primary-container p-8 rounded-xl flex flex-col justify-between min-h-[180px]">
+<span class="material-symbols-outlined text-on-primary-fixed-variant" data-icon="target">target</span>
+<div>
+<div class="text-4xl font-headline italic">75%</div>
+<div class="font-body text-sm opacity-80">Focus Engagement</div>
+</div>
+</div>
+<div class="bg-secondary-container text-on-secondary-container p-8 rounded-xl flex flex-col justify-between min-h-[180px]">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+<div>
+<div class="text-4xl font-headline italic">2</div>
+<div class="font-body text-sm opacity-80">Milestones Reached</div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-8 rounded-xl flex flex-col justify-between min-h-[180px]">
+<span class="material-symbols-outlined text-primary" data-icon="trending_up">trending_up</span>
+<div>
+<div class="text-4xl font-headline italic">+14%</div>
+<div class="font-body text-sm text-on-surface-variant">Positive Sentiment Spike</div>
+</div>
+</div>
+</section>
+<!-- Weekly Progress Chart Area -->
+<section class="bg-surface-container-low p-8 rounded-xl">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h2 class="text-xl font-headline text-primary">Weekly Progress Trends</h2>
+<p class="text-sm text-on-surface-variant font-body">Engagement levels over the last 7 days</p>
+</div>
+<div class="flex items-center space-x-2 bg-surface-container-lowest px-4 py-1 rounded-full border border-outline-variant/10">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="label-sm font-mono">ENGAGEMENT</span>
+</div>
+</div>
+<!-- SVG Chart Visualization -->
+<div class="h-48 w-full relative">
+<svg class="w-full h-full preserve-3d" viewbox="0 0 1000 200">
+<defs>
+<lineargradient id="chartGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#1e3250" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#1e3250" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,160 Q150,140 250,100 T500,80 T750,40 T1000,20 L1000,200 L0,200 Z" fill="url(#chartGradient)"></path>
+<path d="M0,160 Q150,140 250,100 T500,80 T750,40 T1000,20" fill="none" stroke="#061d3a" stroke-linecap="round" stroke-width="3"></path>
+<!-- Data Nodes -->
+<circle cx="250" cy="100" fill="#061d3a" r="4"></circle>
+<circle cx="500" cy="80" fill="#061d3a" r="4"></circle>
+<circle cx="750" cy="40" fill="#061d3a" r="4"></circle>
+<circle cx="1000" cy="20" fill="#061d3a" r="6"></circle>
+</svg>
+<div class="flex justify-between mt-4 label-sm font-mono text-on-surface-variant px-1">
+<span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Updates & Actions -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Quick Actions -->
+<section class="flex flex-col space-y-3">
+<button class="flex items-center justify-between bg-primary text-on-primary px-6 py-4 rounded-xl hover:opacity-90 transition-all duration-200">
+<span class="font-bold">Message Dr. Vance</span>
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+<button class="flex items-center justify-between bg-surface-container-highest text-primary px-6 py-4 rounded-xl hover:bg-surface-container-high transition-all duration-200">
+<span class="font-medium">Schedule Check-in</span>
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+</button>
+<button class="flex items-center justify-between bg-surface-container-highest text-primary px-6 py-4 rounded-xl hover:bg-surface-container-high transition-all duration-200">
+<span class="font-medium">View Full Report</span>
+<span class="material-symbols-outlined" data-icon="bar_chart_4_bars">bar_chart_4_bars</span>
+</button>
+</section>
+<!-- Clinical Updates -->
+<section class="bg-surface-container-low p-6 rounded-xl">
+<h3 class="text-lg font-headline text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="clinical_notes">clinical_notes</span>
+                        Recent Clinical Updates
+                    </h3>
+<div class="space-y-6">
+<div class="border-l-2 border-primary-container pl-4 space-y-2">
+<span class="label-sm font-mono text-on-surface-variant">TODAY, 10:45 AM</span>
+<p class="text-sm font-body text-on-surface leading-relaxed">
+<span class="font-bold">Dr. Vance:</span> "Alex noted great focus today during the math module. We observed a 15% increase in sustained attention."
+                            </p>
+</div>
+<div class="border-l-2 border-outline-variant/30 pl-4 space-y-2">
+<span class="label-sm font-mono text-on-surface-variant">YESTERDAY</span>
+<p class="text-sm font-body text-on-surface leading-relaxed">
+<span class="font-bold">Nurse Elena:</span> "Very calm session. Alex engaged well with the new sensory integration exercises."
+                            </p>
+</div>
+</div>
+<button class="mt-6 text-primary text-sm font-bold flex items-center gap-1 hover:underline">
+                        View all notes
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</section>
+<!-- Supportive Resources -->
+<section>
+<h3 class="text-lg font-headline text-primary mb-4">Recommended for You</h3>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/10 shadow-sm">
+<img alt="Learning" class="w-full h-32 object-cover" data-alt="a calm overhead shot of wooden educational toys and pencils on a light blue surface with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXB2_GiS9DKo6Iodv3rHSlxZzzMDLlogknI4bX-qCjsW4l6X_-qyvEUwUKKdasrL54I_TVad6mB_sT5l7T4rM5oijBnNWdL8_PU8faUOTCbkfV9jnLj2wZaAWbpVCcDvX-HL6pMIr_4GnUNaP-nHqyOaWGKL-A_3ABV3G_rT0W_AHrn6R9TPX-9UIsgaXG54v4AxQ5y_DWuul8mZ1awGXsdhW074AG76S8oVaJcDiOxlJfFjdg-hgpP2kd_LrrBlBszcQiYuXOKW0c"/>
+<div class="p-6">
+<span class="label-sm font-mono text-secondary mb-2 block">ARTICLE</span>
+<h4 class="font-body font-bold text-primary mb-2">5 Ways to Support Neuro-Diverse Learning at Home</h4>
+<p class="text-xs text-on-surface-variant font-body mb-4">Practical tips to create an inclusive environment for Alex's growth.</p>
+<a class="text-sm font-bold text-primary flex items-center gap-2" href="#">
+                                Read Article
+                                <span class="material-symbols-outlined text-xs" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-white/80 dark:bg-[#1a1c1e]/80 backdrop-blur-md flex justify-around items-center px-4 pb-6 pt-2 border-t border-[#f3f3f4] dark:border-[#2d2f31] shadow-[0_-4px_24px_rgba(26,28,29,0.06)]">
+<a class="flex flex-col items-center justify-center bg-[#1E3250] text-white dark:bg-[#D1E1FF] dark:text-[#1E3250] rounded-xl px-3 py-1.5 transition-transform duration-150 scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="home_health">home_health</span>
+<span class="text-[11px] font-medium Inter uppercase tracking-wider mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 p-2 hover:text-[#1E3250] dark:hover:text-[#D1E1FF]" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[11px] font-medium Inter uppercase tracking-wider mt-1">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 p-2 hover:text-[#1E3250] dark:hover:text-[#D1E1FF]" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-[11px] font-medium Inter uppercase tracking-wider mt-1">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 p-2 hover:text-[#1E3250] dark:hover:text-[#D1E1FF]" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="text-[11px] font-medium Inter uppercase tracking-wider mt-1">Resources</span>
+</a>
+</nav>
+</body></html>
